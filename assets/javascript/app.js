@@ -4,7 +4,7 @@ var startYear = "";
 var endYear = "";
 
 $(document).ready(function() {
-    var APIKey = "HF6ua443fROIQFtADx1rvLQm8wXvyApj"
+    var APIKey = "yqpzEG5Xvzd6NApuHiWeK2l8j3Z69ijV"
     var URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKey;
     APIKey;
 
@@ -41,28 +41,6 @@ $(document).ready(function() {
 
 
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
