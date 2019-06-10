@@ -33,7 +33,7 @@ $(document).ready(function() {
             for (let i = 0; i < limit; i++) {
                 var snippet = response.response.docs[i].snippet;
                 var newDiv = $("<div id='result' style='margin:20px;'>");
-                $(newDiv).text(snippet);
+                $(newDiv).append(`<h4> ${i}. </h4> ${snippet}`);
                 $("#top").append(newDiv);
             }
 
