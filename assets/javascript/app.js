@@ -1,5 +1,5 @@
 var searcTerm = "";
-var limit = "";
+var limit = 0;
 var startYear = "";
 var endYear = "";
 
