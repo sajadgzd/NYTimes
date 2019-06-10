@@ -51,8 +51,6 @@ $(document).ready(function() {
                 $(newDiv).append(`<h4> ${i+1}. </h4> ${snippet}`);
                 var pubDate = response.response.docs[i].pub_date;
                 $(newDiv).append(`<p> ${pubDate} </p>`);
-
-
                 $("#top").append(newDiv);
 
             }
