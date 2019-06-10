@@ -10,15 +10,6 @@ $(document).ready(function() {
 
 
 
-
-    function clear() {
-
-    }
-
-    function search() {
-
-    }
-
     $("#searchButton").on("click", function() {
         $("#top").empty();
 
