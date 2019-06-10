@@ -65,9 +65,4 @@ $(document).ready(function() {
 
     });
 
-
-
-
-
-
 })
