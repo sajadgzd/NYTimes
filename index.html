@@ -19,20 +19,32 @@
         <h1>Search Parameters</h1>
         <div class="row">
             <div class="col-12">Search Term:</div>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input type="text" class="form-control" id="searchTerm" placeholder="">
             <div class="col-12"><strong>Number of Records to Retrieve:</strong></div>
-            <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="">
+            <input type="number" class="form-control" id="limit" placeholder="">
             <div class="col-12"><strong>Start Year(optional)</strong></div>
             <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="">
             <div class="col-12"><strong>End Year(optional)</strong></div>
             <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="">
         </div>
         <div class="row">
-            <button class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Search</button>
+            <button class="btn btn-primary btn-lg active" id="searchButton" role="button" aria-pressed="true">Search</button>
             <button class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Clear Results</button>
 
         </div>
         <div class="row">
-            <div class="col-12">Top Article</div>
+            <div class="col-12" id="top">
+                <h1>Top Article</h1>
+            </div>
 
         </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+
+</html>

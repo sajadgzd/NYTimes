@@ -4,8 +4,9 @@ var startYear = "";
 var endYear = "";
 
 $(document).ready(function() {
-    var APIKey = "21f4a17d-89bf-43f2-a3ed-feef72737806";
+    var APIKey = "HF6ua443fROIQFtADx1rvLQm8wXvyApj"
     var URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKey;
+    APIKey;
 
 
 
@@ -18,15 +19,25 @@ $(document).ready(function() {
 
     }
 
-    $("searchButton").on("click", function() {
-        searcTerm = $("#searchTerm").val().trim();
-        var newURL = URL + "&q=" + searcTerm;
+    $("#searchButton").on("click", function() {
+
+        event.preventDefault();
+        searchTerm = $("#searchTerm").val().trim();
+        limit = $("#limit").val();
+        var newURL = URL + "&q=" + searchTerm;
         $.ajax({
             url: newURL,
             method: "GET"
         }).then(function(response) {
+            console.log(newURL);
+            for (let i = 0; i < limit; i++) {
+                var snippet = response.response.docs[i].snippet;
+                var newDiv = $("<div id='result'>");
+                $(newDiv).text(snippet);
+                $("#top").append(newDiv);
+            }
 
-            console.log(response);
+
 
         });
 
