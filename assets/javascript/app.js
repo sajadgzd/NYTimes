@@ -20,6 +20,7 @@ $(document).ready(function() {
     }
 
     $("#searchButton").on("click", function() {
+        $("#top").empty();
 
         event.preventDefault();
         searchTerm = $("#searchTerm").val().trim();
@@ -45,11 +46,13 @@ $(document).ready(function() {
         }).then(function(response) {
             console.log(newURL);
             for (let i = 0; i < limit; i++) {
-                var snippet = response.response.docs[i].snippet;
+                var snippet = response.response.docs[i].headline.main;
                 var newDiv = $(`<div id='result-${i}' style='margin:20px;'>`);
                 $(newDiv).append(`<h4> ${i+1}. </h4> ${snippet}`);
                 var pubDate = response.response.docs[i].pub_date;
-                $(newDiv).prepend(`${pubDate}`);
+                $(newDiv).append(`<p> ${pubDate} </p>`);
+
+
                 $("#top").append(newDiv);
 
             }
