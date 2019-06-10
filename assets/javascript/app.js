@@ -29,12 +29,12 @@ $(document).ready(function() {
         var newURL = URL + "&q=" + searchTerm;
 
         if (parseInt(startYear)) {
-            startYear = startYear + 0101;
+            startYear = startYear + "0101";
             newURL = newURL + "&begin_date=" + startYear;
         }
 
         if (parseInt(startYear)) {
-            endYear = startYear + 0101;
+            endYear = endYear + "0101";
             newURL = newURL + "&end_date=" + endYear;
         }
 
