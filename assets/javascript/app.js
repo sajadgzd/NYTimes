@@ -46,11 +46,16 @@ $(document).ready(function() {
         }).then(function(response) {
             console.log(newURL);
             for (let i = 0; i < limit; i++) {
-                var snippet = response.response.docs[i].headline.main;
                 var newDiv = $(`<div id='result-${i}' style='margin:20px;'>`);
-                $(newDiv).append(`<h4> ${i+1}. </h4> ${snippet}`);
+
+                var snippet = response.response.docs[i].headline.main;
+                if (snippet != "null") {
+                    $(newDiv).append(`<h4> ${i+1}. </h4> ${snippet}`);
+                }
                 var pubDate = response.response.docs[i].pub_date;
-                $(newDiv).append(`<p> ${pubDate} </p>`);
+                if (pubDate != "null") {
+                    $(newDiv).append(`<p> ${pubDate} </p>`);
+                }
                 $("#top").append(newDiv);
 
             }
