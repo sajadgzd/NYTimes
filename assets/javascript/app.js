@@ -23,8 +23,22 @@ $(document).ready(function() {
 
         event.preventDefault();
         searchTerm = $("#searchTerm").val().trim();
+        startYear = $("#startYear").val().trim();
+        endYear = $("#endYear").val().trim();
         limit = $("#limit").val();
         var newURL = URL + "&q=" + searchTerm;
+
+        if (parseInt(startYear)) {
+            startYear = startYear + 0101;
+            newURL = newURL + "&begin_date=" + startYear;
+        }
+
+        if (parseInt(startYear)) {
+            endYear = startYear + 0101;
+            newURL = newURL + "&end_date=" + endYear;
+        }
+
+
         $.ajax({
             url: newURL,
             method: "GET"
@@ -35,6 +49,7 @@ $(document).ready(function() {
                 var newDiv = $("<div id='result' style='margin:20px;'>");
                 $(newDiv).append(`<h4> ${i}. </h4> ${snippet}`);
                 $("#top").append(newDiv);
+
             }
 
         });
