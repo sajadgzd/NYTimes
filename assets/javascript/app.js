@@ -48,6 +48,8 @@ $(document).ready(function() {
                 var snippet = response.response.docs[i].snippet;
                 var newDiv = $(`<div id='result-${i}' style='margin:20px;'>`);
                 $(newDiv).append(`<h4> ${i+1}. </h4> ${snippet}`);
+                var pubDate = response.response.docs[i].pub_date;
+                $(newDiv).prepend(`${pubDate}`);
                 $("#top").append(newDiv);
 
             }
